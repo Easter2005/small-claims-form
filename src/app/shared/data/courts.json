@@ -1,0 +1,35 @@
+[{
+     "division":"EAST DIVISION",
+     "name":"BELLEVUE COURTHOUSE"
+ },{
+     "division":"EAST DIVISION",
+     "name":"ISSAQUAH COURTHOUSE"
+ },{
+     "division":"EAST DIVISION",
+     "name":"REDMOND COURTHOUSE"
+ },{
+     "division":"SOUTH DIVISION",
+     "name":"AUBURN COURTHOUSE"
+ },{
+     "division":"SOUTH DIVISION",
+     "name":"BURIEN COURTHOUSE"
+ },{
+     "division":"SOUTH DIVISION",
+     "name":"MRJC COURTHOUSE"
+ },{
+     "division":"SOUTH DIVISION",
+     "name":"MRJC COURTHOUSE\\DV COURT"
+ },{
+     "division":"SOUTH DIVISION",
+     "name":"VASHON COURTHOUSE"
+ },{
+     "division":"WEST DIVISION",
+     "name":"KCCF JAIL COURTHOUSE"
+ },{
+     "division":"WEST DIVISION",
+     "name":"SEATTLE COURTHOUSE"
+ },{
+     "division":"WEST DIVISION",
+     "name":"SHORELINE COURTHOUSE"
+ }
+ ]

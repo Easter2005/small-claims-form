@@ -1,0 +1,64 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
+select.center {
+  text-align: center;
+  text-align-last: center;
+  /* webkit*/
+}
+option.lt {
+  text-align: left;
+  /* reset to left*/
+}
+.table {
+    border-bottom:0px !important;
+}
+.table th, .table td {
+    border: 1px !important;
+    padding: 1px;
+    width: 50%;
+}
+.input-md.condensed {
+    height: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0px;
+}
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+input.namebox {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /*border-bottom: 2px;*/
+    width: 280px;
+}
+input.causebox {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /*border-bottom: 2px;*/
+    width: 150px;
+}
+.ml-1 {
+  margin-left: 15px !important;
+}
+.hide-me{
+  display: none;
+}
+.show-me{
+  display: block;
+}
+.grayout {
+    opacity: 0.2; /* Real browsers */
+    filter: alpha(opacity = 20); /* MSIE */
+}

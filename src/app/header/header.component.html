@@ -1,0 +1,179 @@
+<div class="container" id="printview">
+  <div class="row text-center">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4"><h4>KING COUNTY DISTRICT COURT</h4></div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 text-center">
+    <label class="hide-me">{{selectedDivision}}</label>
+    <select class="form-control center select-division noprint"
+        (change)="onDivisionChange($event.target.value)">
+        <option class="lt" selected disabled hidden value=''>--- DIVISION ---</option>
+      <option class="lt" *ngFor="let dv of divisions" [value]="dv.name">{{dv.name}}</option>
+    </select>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 text-center">
+    <label class="hide-me">{{selCourt}}</label>
+    <select class="form-control center select-court noprint"[(ngModel)]="selCourt">
+      <option class="lt" hidden value=''>--- COURT ---</option>
+      <option class="lt" *ngFor="let crt of currentCourts" [value]="crt.name">{{crt.name}}</option>
+    </select>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<BR>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5 ml-1">SMALL CLAIMS DEPARTMENT </div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4 text-center"><label class="hide-me">{{plaintiff}}</label><input [(ngModel)]="plaintiff" class= "namebox text-center noprint" type="text" placeholder="Plaintiff(s)"/>,</div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-6 text-right">Plaintiff(s),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+  <div class="col-sm-5 ml-1">Cause No. <label class='hide-me'>{{causeNo}}</label><input [(ngModel)]="causeNo" class= "causebox noprint" type="text"/></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4 text-center">V.</div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5 ml-1"><label class="hide-me">{{selTitle}}</label>
+    <select class="form-control input-md condensed noprint"
+        [(ngModel)]="selTitle">
+        <option value=''>--- Title of Document ---</option>
+      <option *ngFor="let dc of titles" [value]="dc.name">{{dc.name}}</option>
+    </select>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4 text-center"><label class="hide-me text-center">{{defendant}}</label><input [(ngModel)]="defendant" class= "namebox text-center noprint" type="text" placeholder="Defendant(s)"/>,</div>
+  <div class="col-sm-1 text-right">)</div>
+  <div class="col-sm-5"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row no-gutter">
+  <div class="col-sm-6 text-right">Defendant(s),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+  <div class="col-sm-6 ml-1"></div>
+</div>
+<BR>
+<div class="row no-gutter">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="panel panel-success">
+      <div class="panel-body">
+      &nbsp;&nbsp;This matter came on for trial hearing in open court on <label class="hide-me">{{selectedDate | date: 'yyyy-MM-dd'}}</label>
+      <p-calendar class="noprint" [(ngModel)] = "selectedDate"></p-calendar>. Plaintiff has claimed damages of $
+      <input [(ngModel)]="claimedDamage" OnlyNumber="true" class= "namebox noprint" style="width: 110px;"/>
+      <label class="hide-me">{{claimedDamage}}</label> for&nbsp;
+      <input [(ngModel)]="claimedDamageFor" class="namebox noprint" style="width: 180px;"/><label class="hide-me">{{claimedDamageFor}}</label>.
+      <span class="noprint">[ Defendant has counter-claimed damages of $
+        <input [(ngModel)]="counterClaimedDamage" OnlyNumber="true" class="namebox noprint" style="width: 110px;"/>&nbsp;for&nbsp;
+        <input [(ngModel)]="counterClaimedDamageFor" class="namebox noprint" style="widows: 180px;"/>.] The plaintiff(s)
+      </span>
+      <span *ngIf="counterClaimedDamage" class="hide-me">
+          Defendant has counter-claimed damages of <label>{{counterClaimedDamage}}</label> for <label>{{counterClaimedDamageFor}}</label>.
+      </span>
+      <p-toggleButton class="noprint" 
+                      onLabel="appeared" 
+                      offLabel="did not appear" 
+                      onIcon="fa-check-square"
+                      offIcon="fa-square"
+                      [(ngModel)]="isPlaintiffAppeared"
+                      (onChange)="onPlaintiffClick($event)">
+      </p-toggleButton><span class="noprint"> and the defendant(s)</span>
+      <p-toggleButton class="noprint" 
+                      onLabel="appeared" 
+                      offLabel="did not appear" 
+                      onIcon="fa-check-square"
+                      offIcon="fa-square"
+                      [(ngModel)]="isDefendantAppeared"
+                      (onChange)="onDefendantClick($event)">
+      </p-toggleButton><span class="noprint">for the hearing.</span>
+      <span class="hide-me">The plaintiff(s) <label>{{plaintiffAppearance}}</label> and the defendant(s) <label>{{defendantAppearance}}</label> for the hearing.</span>
+      <span class="noprint">Defendant 
+        <p-toggleButton class="noprint" 
+                      onLabel="was" 
+                      offLabel="was not" 
+                      onIcon="fa-check-square"
+                      offIcon="fa-square"
+                      [(ngModel)]="isServed"
+                      (onChange)="servedText= isServed? 'was':'was not';"></p-toggleButton>
+        served.
+      </span>
+          <span class="hide-me"> Defendant <label>{{servedText}}</label> served.</span>
+      </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <pfta-dncc *ngIf="!isPlaintiffAppeared && !counterClaimedDamage" [defAppearanceText] ="dAprc" ></pfta-dncc>
+  <pfta-dacc *ngIf="!isPlaintiffAppeared && isDefendantAppeared && counterClaimedDamage"></pfta-dacc>
+  <pfta-dfta-dcc *ngIf="!isPlaintiffAppeared && !isDefendantAppeared && counterClaimedDamage"></pfta-dfta-dcc>
+  <pa-dfta-ns *ngIf="isPlaintiffAppeared && !isDefendantAppeared && !isServed" (isDismissed)="onIsDismissed($event)"></pa-dfta-ns>
+  <pa-dfta-svd *ngIf="isPlaintiffAppeared && !isDefendantAppeared && isServed"></pa-dfta-svd>
+  <pa-da *ngIf="isPlaintiffAppeared && isDefendantAppeared"></pa-da>
+  <div class="row no-gutter">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-success">
+        <div class="panel-heading noprint">Narratives:</div>
+        <div class="panel-body">
+            <textarea rows="5" cols="90"pInputTextarea autoResize="autoResize" [(ngModel)]="narrativeText" class="noprint"
+    placeholder="{here set forth in detail the court’s ruling and reasons therefore, including an accounting for any judgment(s) awarded and offset.}"></textarea>
+        <div class="hide-me">{{narrativeText}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <judgement-denied *ngIf="ifDismissed()"></judgement-denied>
+</div>
+
+
+<div>
+  <button class="btn btn-lg btn-primary"(click)="printForm('printview')">  Print  </button>
+</div>

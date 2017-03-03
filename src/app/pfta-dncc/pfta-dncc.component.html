@@ -1,0 +1,21 @@
+  <div class="row no-gutter">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-success">
+        <div class="panel-heading noprint">Plaintiff FTA, Defendant has no counter-claimed</div>
+        <div class="panel-body"> Plaintiff having failed to appear, the court finding a failure to prosecute the claim, there being no counter-claim,
+          and defendant having {{defAppearanceText}}, this matter is dismissed
+          <p-toggleButton class="noprint"onLabel="with" 
+                      offLabel="without" 
+                      onIcon="fa-check-square"
+                      offIcon="fa-square"
+                      [(ngModel)]="isWith"
+                      (onChange)="withText= isWith? 'with':'without';"></p-toggleButton>
+          <label class="hide-me">{{withText}}</label>
+          <span> prejudice and without costs to either party.</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+

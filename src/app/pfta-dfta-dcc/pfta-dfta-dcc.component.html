@@ -1,0 +1,22 @@
+  <div class="row no-gutter">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-success" style="position: absolute; z-index:-1">
+        <div class="panel-heading noprint">Plaintiff FTA, Defendant FTA and counter-claimed</div>
+        <div class="panel-body"> Plaintiff having failed to appear in court, the court finding a failure to prosecute the claim, the plaintiff's claim
+          is dismissed 
+          <p-toggleButton class="noprint" onLabel="with" offLabel="without" onIcon="fa-check-square" offIcon="fa-square"
+            [(ngModel)]="isWith" (onChange)="withText=isWith? 'with':'without'"></p-toggleButton>
+          <label class="hide-me">{{withText}}</label>
+          <span> prejudice. Defendant also having failed to appear in court and having filed a counterclaim, 
+            and the court finding the defendant has failed to prosecute the counterclaim, 
+            the defendant’s counterclaim is dismissed 
+            <p-toggleButton class="noprint" onLabel="with" offLabel="without" onIcon="fa-check-square" offIcon="fa-square"
+            [(ngModel)]="isWith1" (onChange)="withText1=isWith1? 'with':'without'"></p-toggleButton>
+          <label class="hide-me">{{withText1}}</label> prejudice. 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>

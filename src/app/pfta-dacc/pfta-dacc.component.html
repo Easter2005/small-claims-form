@@ -1,0 +1,23 @@
+  <div class="row no-gutter">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-success" >
+        <div class="panel-heading noprint">Plaintiff FTA, Defendant appeared and counter-claimed</div>
+        <div class="panel-body"> Plaintiff having failed to appear in court, the court finding a failure to prosecute the claim, the plaintiff's claim
+          is dismissed 
+          <p-toggleButton class="noprint" onLabel="with" offLabel="without" onIcon="fa-check-square" offIcon="fa-square"
+            [(ngModel)]="isWith" (onChange)="withText=isWith? 'with':'without'"></p-toggleButton>
+          <label class="hide-me">{{withText}}</label>
+          <span> prejudice. The court also finds no good cause for plaintiff’s failure to appear, 
+            and further finding notice of the defendant’s counterclaim and this hearing date was properly served on the plaintiff, 
+            the court finds the plaintiff in default on the counterclaim.  
+            The court has reviewed the submission of the defendant and considered defendant’s sworn testimony and finds there 
+            <p-toggleButton class="noprint" onLabel="is" offLabel="is not" onIcon="fa-check-square" offIcon="fa-square"
+            [(ngModel)]="isSufficient" (onChange)="isText=isSufficient? 'is':'is not'"></p-toggleButton>
+          <label class="hide-me">{{isText}}</label> sufficient evidence of the validity of the defendant’s counterclaim. 
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
