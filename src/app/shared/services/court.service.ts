@@ -9,7 +9,7 @@ export class CourtService {
   courtStore: Court[] = [];
   courtFeed: Observable<Court>;
   private courtObserver: any;
-  private dataUrl = '/app/shared/data/courts.json';
+  private dataUrl = 'https://cdn.rawgit.com/Easter2005/small-claims-form/a0b1476d/src/app/shared/data/courts.json';
 
   constructor(private http: Http) {
     this.courtFeed = new Observable(observer => {

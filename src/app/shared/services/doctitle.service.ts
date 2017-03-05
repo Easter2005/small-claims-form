@@ -9,7 +9,7 @@ export class DoctitleService {
   doctitleStore: Doctitle[] = [];
   doctitleFeed: Observable<Doctitle>;
   private doctitleObserver: any;
-  private dataUrl = '/app/shared/data/titles.json';
+  private dataUrl = 'https://cdn.rawgit.com/Easter2005/small-claims-form/a0b1476d/src/app/shared/data/titles.json';
 
   constructor(private http: Http) {
     this.doctitleFeed = new Observable(observer => {

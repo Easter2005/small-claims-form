@@ -9,7 +9,7 @@ export class DivisionService {
   divisionStore: Division[] = [];
   divisionFeed: Observable<Division>;
   private divisionObserver: any;
-  private dataUrl = '/app/shared/data/courts.json';
+  private dataUrl = 'https://cdn.rawgit.com/Easter2005/small-claims-form/a0b1476d/src/app/shared/data/courts.json';
 
   constructor(private http: Http) {
     this.divisionFeed = new Observable(observer => {

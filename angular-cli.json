@@ -9,9 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "app/shared/data/courts.json",
-        "app/shared/data/titles.json"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
