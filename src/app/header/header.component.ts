@@ -81,6 +81,11 @@ export class HeaderComponent implements OnInit {
    return true;
    else return this.isDismissed;
  }
+ ifNotDismissed(): boolean{
+   if(this.isDismissed == null)
+   return false;
+   else return !this.isDismissed;
+ }
   printForm(sectionId: string){
     const tmp = document.createElement('div');
     const el = this.nativeElement.cloneNode(true);

@@ -20,6 +20,7 @@ import { NumbersOnlyDirective } from './shared/directives/numbers-only.directive
 import { PaDftaSvdComponent } from './pa-dfta-svd/pa-dfta-svd.component';
 import { PaDaComponent } from './pa-da/pa-da.component';
 import { JudgementDeniedComponent } from './judgement-denied/judgement-denied.component';
+import { JudgementGrantedComponent } from './judgement-granted/judgement-granted.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { JudgementDeniedComponent } from './judgement-denied/judgement-denied.co
     NumbersOnlyDirective,
     PaDftaSvdComponent,
     PaDaComponent,
-    JudgementDeniedComponent
+    JudgementDeniedComponent,
+    JudgementGrantedComponent
   ],
   imports: [
     BrowserModule,
