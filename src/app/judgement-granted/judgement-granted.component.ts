@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../header/header.component.css']
 })
 export class JudgementGrantedComponent implements OnInit {
-
-  constructor() { }
-
+  parties: any[];
+  constructor() { 
+    this.parties = [];
+    this.parties.push({label:'plaintiff', value:'plaintiff'});
+    this.parties.push({label:'defendant', value:'defendant'});
+  }
   ngOnInit() {
   }
 

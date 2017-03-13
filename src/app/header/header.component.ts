@@ -1,5 +1,6 @@
 import { Component, OnInit, Input,ElementRef} from '@angular/core';
 import {Division, DivisionService, Court, CourtService, Doctitle, DoctitleService} from '../shared/shared';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import {Division, DivisionService, Court, CourtService, Doctitle, DoctitleServic
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  msgs: Message[] = [];
   private nativeElement : Node;
   private divisions: Division[];
   private courts: Court[];
@@ -35,6 +37,7 @@ export class HeaderComponent implements OnInit {
       this.plaintiffAppearance = "did not appear";
       this.defendantAppearance = "did not appear";
       this.servedText = "was not";
+      this.isDismissed = true;
     }
 
   ngOnInit(): void {
@@ -65,20 +68,22 @@ export class HeaderComponent implements OnInit {
    this.isPlaintiffAppeared = e.checked;
    this.plaintiffAppearance = e.checked? 'appeared':'did not appear';
    this.pAprc = e.checked? 'appeared':'not appeared';
-   this.isDismissed = e.checked;
+   this.isDismissed = !e.checked;
+   this.showInfo();
  }
  onDefendantClick(e){
    this.isDefendantAppeared = e.checked;
    this.defendantAppearance = e.checked? 'appeared':'did not appear';
    this.dAprc = e.checked? 'appeared':'not appeared';
+   this.showInfo();
  }
  onIsDismissed(isDissmissed: boolean)
  {
    this.isDismissed = isDissmissed;
+   this.showInfo();
  }
  ifDismissed(): boolean{
-   if(this.isDismissed == null)
-   return true;
+   if(this.isDismissed == null) {return true;}
    else return this.isDismissed;
  }
  ifNotDismissed(): boolean{
@@ -86,6 +91,12 @@ export class HeaderComponent implements OnInit {
    return false;
    else return !this.isDismissed;
  }
+ showInfo(){
+    this.msgs = [];
+    this.msgs.push({severity: 'info', summary:'', detail:'Plaintiff: '+this.plaintiffAppearance});
+    this.msgs.push({severity: 'info', summary:'', detail:'Defendant: '+this.defendantAppearance});
+    this.msgs.push({severity: 'info', summary:'', detail:'Dissmissed?: '+this.isDismissed});
+  }
   printForm(sectionId: string){
     const tmp = document.createElement('div');
     const el = this.nativeElement.cloneNode(true);

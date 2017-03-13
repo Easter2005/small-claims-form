@@ -7,7 +7,9 @@ import { ToggleButtonModule,
          InputTextareaModule, 
          AutoCompleteModule,
          InputTextModule,
-         SelectButtonModule } from 'primeng/primeng';
+         SelectButtonModule,
+         MessagesModule,
+         GrowlModule } from 'primeng/primeng';
 import { SHARED_PROVIDERS } from './shared/shared';
 
 import { AppComponent } from './app.component';
@@ -45,7 +47,9 @@ import { JudgementGrantedComponent } from './judgement-granted/judgement-granted
     InputTextareaModule,
     AutoCompleteModule,
     InputTextModule,
-    SelectButtonModule
+    SelectButtonModule,
+    MessagesModule,
+    GrowlModule
   ],
   providers: [SHARED_PROVIDERS],
   bootstrap: [AppComponent]

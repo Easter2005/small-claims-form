@@ -1,8 +1,8 @@
   <div class="row no-gutter">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="panel panel-success">
-        <div class="panel-heading noprint">judgment denied to one or both parties</div>
+      <div class="panel panel-primary">
+        <div class="panel-heading noprint">Judgment denied to one or both party.</div>
         <div class="panel-body"> Accordingly, no judgment shall be taken by <label class="hide-me">{{selectedParty}}</label>
           <p-selectButton class="noprint"[options]="parties" [(ngModel)]="selectedParty"></p-selectButton>
           and <label class="hide-me">{{dismissedParty}}</label><p-selectButton class="noprint"[options]="dismissedParties" [(ngModel)]="dismissedParty"></p-selectButton>

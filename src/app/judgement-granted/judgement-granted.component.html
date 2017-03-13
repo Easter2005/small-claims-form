@@ -1,3 +1,13 @@
-<p>
-  judgement-granted works!
-</p>
+  <div class="row no-gutter">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading noprint">Judgment granted to either party or both with setoff.</div>
+        <div class="panel-body"> Accordingly, judgment is awarded to the <label class="hide-me">{{selectedParty}}</label>
+          <p-selectButton class="noprint"[options]="parties" [(ngModel)]="selectedParty"></p-selectButton>
+          in the following amounts:
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>

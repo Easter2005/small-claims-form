@@ -18,7 +18,6 @@ export class PaDftaNsComponent implements OnInit {
 
   ngOnInit() {
   }
-
   onGoodCauseChange(){
     this.gcText=this.isGoodCause? 'good cause': 'no good cause'; 
     this.isDismissed.emit(!this.isGoodCause);

@@ -16,5 +16,4 @@ export class PftaDaccComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

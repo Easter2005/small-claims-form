@@ -21,5 +21,4 @@ export class JudgementDeniedComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

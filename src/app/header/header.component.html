@@ -1,4 +1,5 @@
 <div class="container" id="printview">
+  <p-growl class="noprint" [value]="msgs" [sticky]="true"></p-growl>
   <div class="row text-center">
   <div class="col-sm-4"></div>
   <div class="col-sm-4"><h4>KING COUNTY DISTRICT COURT</h4></div>
@@ -105,7 +106,7 @@
   <div class="col-sm-10">
     <div class="panel panel-success">
       <div class="panel-body">
-      &nbsp;&nbsp;This matter came on for trial hearing in open court on <label class="hide-me">{{selectedDate | date: 'yyyy-MM-dd'}}</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;This matter came on for trial hearing in open court on <label class="hide-me">{{selectedDate | date: 'yyyy-MM-dd'}}</label>
       <p-calendar class="noprint" [(ngModel)] = "selectedDate"></p-calendar>. Plaintiff has claimed damages of $
       <input [(ngModel)]="claimedDamage" OnlyNumber="true" class= "namebox noprint" style="width: 110px;"/>
       <label class="hide-me">{{claimedDamage}}</label> for&nbsp;
@@ -159,10 +160,10 @@
   <div class="row no-gutter">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="panel panel-success">
-        <div class="panel-heading noprint">Narratives:</div>
+      <div class="panel panel-primary">
+        <div class="panel-heading noprint">Narrative</div>
         <div class="panel-body">
-            <textarea rows="5" cols="90"pInputTextarea autoResize="autoResize" [(ngModel)]="narrativeText" class="noprint"
+            <textarea rows="6" pInputTextarea autoResize="autoResize" [(ngModel)]="narrativeText" class="form-control noprint"
     placeholder="{here set forth in detail the court’s ruling and reasons therefore, including an accounting for any judgment(s) awarded and offset.}"></textarea>
         <div class="hide-me">{{narrativeText}}</div>
         </div>
@@ -174,7 +175,12 @@
   <judgement-granted *ngIf="ifNotDismissed()"></judgement-granted>
 </div>
 
-
-<div>
-  <button class="btn btn-lg btn-primary"(click)="printForm('printview')">  Print  </button>
+<BR>
+<div class="row text-center">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4"><button class="btn btn-lg btn-primary"(click)="printForm('printview')">  Print  </button></div>
+  <div class="col-sm-4"></div>
 </div>
+
+<BR>
+<BR>

@@ -13,5 +13,4 @@ export class PaDftaSvdComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

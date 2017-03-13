@@ -1,8 +1,8 @@
   <div class="row no-gutter">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="panel panel-success">
-        <div class="panel-heading noprint">Plaintiff appeared, Defendant not appearing and no service</div>
+      <div class="panel panel-primary">
+        <div class="panel-heading noprint">Plaintiff(s) appeared and Defendant(s) not appeared and not served.</div>
         <div class="panel-body"> Plaintiff having appeared in court, and the court finding notice of the plaintiff’s claim and this hearing date was not timely served on the defendant, 
           and the court finding
           <p-toggleButton class="noprint" 
@@ -13,10 +13,9 @@
                       [(ngModel)]="isGoodCause"
                       (onChange)="onGoodCauseChange()">
           </p-toggleButton><label class="hide-me">{{gcText}}</label>
-          <span *ngIf="isGoodCause"> 
-           , the matter is continued until 
+          <span *ngIf="isGoodCause">, the matter is continued until 
            <p-calendar class="noprint" [(ngModel)] = "serveDate"></p-calendar><label class="hide-me">{{serveDate | date: 'yyyy-MM-dd'}}</label> at 
-           <p-calendar class="noprint" [(ngModel)] = "serveTime" [timeOnly]="true"></p-calendar><label class="hide-me">{{serveTime}}</label> to allow further time for service of process. Plaintiff
+           <p-calendar class="noprint" [(ngModel)] = "serveTime" [timeOnly]="true"></p-calendar><label class="hide-me">{{serveTime | date: 'shortTime'}}</label> to allow further time for service of process. Plaintiff
             shall be responsible for effecting service.
           </span>
           <span *ngIf="!isGoodCause">
