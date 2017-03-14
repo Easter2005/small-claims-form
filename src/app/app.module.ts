@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ToggleButtonModule, 
          CalendarModule, 
-         InputTextareaModule, 
+         InputTextareaModule,
          AutoCompleteModule,
          InputTextModule,
          SelectButtonModule,

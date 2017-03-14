@@ -6,10 +6,13 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class NumbersOnlyDirective {
   @Input() OnlyNumber: boolean;
 
+  constructor(private el:ElementRef) {
+    }
+
   @HostListener('keydown', ['$event']) onKeyDown(event) {
     let e = <KeyboardEvent> event;
     if (this.OnlyNumber) {
-      if ([46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 ||
+      if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
         // Allow: Ctrl+A
         (e.keyCode == 65 && e.ctrlKey === true) ||
         // Allow: Ctrl+C
@@ -20,6 +23,21 @@ export class NumbersOnlyDirective {
         (e.keyCode >= 35 && e.keyCode <= 39)) {
           // let it happen, don't do anything
           return;
+        }
+        if(e.keyCode == 110 || e.keyCode == 190)
+        {
+            if(this.el.nativeElement.value.indexOf('.')>=0){
+              e.preventDefault();
+            }
+            else return;
+        }
+        if(e.keyCode>=47 && e.keyCode < 58){
+          var cursorPos = this.el.nativeElement.selectionStart;
+          var decimalPos = this.el.nativeElement.value.indexOf('.');
+          if (decimalPos > 0 && cursorPos > decimalPos+2){
+            e.preventDefault();
+          }
+          else return;
         }
         // Ensure that it is a number and stop the keypress
         if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
