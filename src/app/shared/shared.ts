@@ -4,18 +4,18 @@ import Doctitle from './interfaces/doctitle';
 import {DivisionService} from './services/division.service';
 import {CourtService} from './services/court.service';
 import {DoctitleService} from './services/doctitle.service';
+import {JudgeService} from './services/judge.service';
+
 const SHARED_PROVIDERS: any[] = [
     DivisionService,
     CourtService,
-    DoctitleService
+    DoctitleService,
+    JudgeService
 ];
 
 export {
     Court,
     Division,
     Doctitle,
-    DivisionService,
-    CourtService,
-    DoctitleService,
     SHARED_PROVIDERS
 };
