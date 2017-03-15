@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,ElementRef} from '@angular/core';
-import {Division, DivisionService, Court, CourtService, Doctitle, DoctitleService} from '../shared/shared';
+import {Division, DivisionService, Court, CourtService, Doctitle, DoctitleService, JudgeService} from '../shared/shared';
 import {Message} from 'primeng/components/common/api';
 
 @Component({
@@ -24,10 +24,14 @@ export class HeaderComponent implements OnInit {
   private servedText: string;
   private isDismissed: boolean;
   private date = new Date();
+  private filteredJudges: any[];
+  judge : string;
+  
   constructor( private elementRef : ElementRef,
                private divisionService: DivisionService,
                private courtService: CourtService,
-               private titleService: DoctitleService){
+               private titleService: DoctitleService,
+               private judgeService: JudgeService){
       this.nativeElement = elementRef.nativeElement;
       this.divisions = this.divisionService.divisionStore;
       this.courts = this.courtService.courtStore;
@@ -57,6 +61,38 @@ export class HeaderComponent implements OnInit {
   });
   this.titleService.doctitleFeed.subscribe(newTitle=>{
     this.titles.push(newTitle);
+  });
+}
+
+filterJudges(event) {
+        let query = event.query;        
+        this.judgeService.getJudges().then(judges => {
+            this.filteredJudges = this.filterJudgesBy(query, judges);
+        });
+}
+filterJudgesBy(query, judges: any[]):any[] {
+        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        let filtered : any[] = [];
+        console.log(query);
+        for(let i = 0; i < judges.length; i++) {
+            let judge = judges[i];
+            if(judge.name.toLowerCase().indexOf(query.toLowerCase()) > 0) {
+                filtered.push(judge);
+            }
+        }
+        return filtered;
+}
+returnAllJudges(judges:any[]):any[]{
+  let filtered: any[] = [];
+  for (let i=0; i< judges.length; i++){
+    //console.log(judges[i]);
+    filtered.push(judges[i]);
+  }
+  return filtered;
+}
+handleDropdownClick() {       
+  this.judgeService.getJudges().then(judges => {
+    this.filteredJudges = this.returnAllJudges(judges);
   });
 }
   onDivisionChange(division: string): void {

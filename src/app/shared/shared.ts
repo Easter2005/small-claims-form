@@ -17,5 +17,9 @@ export {
     Court,
     Division,
     Doctitle,
+    CourtService,
+    DivisionService,
+    DoctitleService,
+    JudgeService,
     SHARED_PROVIDERS
 };

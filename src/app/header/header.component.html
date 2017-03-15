@@ -190,6 +190,25 @@
   </div>
   <div class="col-sm-1"></div>
 </div>
+<BR>
+<BR>
+<div class="row">
+  <div class="col-sm-7"></div>
+  <div class="col-sm-4">
+    <p-autoComplete class="noprint" [(ngModel)]="judge" [suggestions]="filteredJudges" (completeMethod)="filterJudges($event)" [size]="30" field="name"
+    [minLength]="1" placeholder="Judge Name" [dropdown]="true" (onDropdownClick)="handleDropdownClick($event)">
+    </p-autoComplete>
+    <label class="hide-me">{{judge? judge.name || judge: ''}}</label>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<div class="row">
+  <div class="col-sm-7"></div>
+  <div class="col-sm-4">
+    King County District Court
+  </div>
+  <div class="col-sm-1"></div>
+</div>
 </div>
 <BR>
 
