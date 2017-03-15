@@ -1,22 +1,72 @@
   <div class="row no-gutter">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary noborder">
         <div class="panel-heading noprint">Judgment granted to either party or both with setoff.</div>
-        <div class="panel-body"> Accordingly, judgment is awarded to the <label class="hide-me">{{selectedParty}}</label>
-          <p-selectButton class="noprint"[options]="parties" [(ngModel)]="selectedParty"></p-selectButton>
-          in the following amounts:
-        </div>
-      </div>
+        <div class="panel-body"> 
+          <div class="row no-gutter" [class.noprint]="!judgmentAwarded">
+            <div class="col-sm-12">
+              <input type="checkbox" [(ngModel)]="judgmentAwarded" class="noprint"/>&nbsp;
+              Accordingly, judgment is awarded to the <label class="hide-me">{{selectedParty}}</label>
+              <p-selectButton class="noprint"[options]="parties" [(ngModel)]="selectedParty"></p-selectButton>
+              in the following amounts:
+            </div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!judgmentAwarded">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2">Principle </div>
+            <div class="col-sm-4">
+              $<input #principleAmountInput [(ngModel)]="principleAmount" OnlyNumber="true" class= "namebox noprint" placeholder="0.00" style="width: 180px; text-align: right;"/>
+              <label class="hide-me">{{principleAmount}}</label>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!judgmentAwarded">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2">Filing Fee </div>
+            <div class="col-sm-4">
+              $<input #filingFeeInput [(ngModel)]="filingFee" OnlyNumber="true" class= "namebox noprint" placeholder="0.00" style="width: 180px;" value="0" style="width: 180px; text-align: right;"/>
+              <label class="hide-me">{{filingFee}}</label>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!judgmentAwarded">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2">Service Fee </div>
+            <div class="col-sm-4">
+              $<input #serviceFeeInput [(ngModel)]="serviceFee" OnlyNumber="true" class= "namebox noprint" placeholder="0.00" value="0" style="width: 180px; text-align: right;"/>
+              <label class="hide-me">{{serviceFee}}</label>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!judgmentAwarded">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2"><b>Total</b> </div>
+            <div class="col-sm-4">
+              $<input OnlyNumber="true" type="text" class= "namebox noprint" placeholder="0.00" style="width: 180px; text-align: right;" [value]="principleAmountInput.value*1 + filingFeeInput.value*1 + serviceFeeInput.value*1"/>
+              <label class="hide-me">{{principleAmountInput.value*1 + filingFeeInput.value*1 + serviceFeeInput.value*1}}</label>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!interestAccrued">
+            <div class="col-sm-12">
+              <input type="checkbox" [(ngModel)]="interestAccrued" class="noprint"/>&nbsp;
+              Post-judgment interest shall accrue on this judgment at the statutorily prescribed rate until the judgment is satisfied.
+            </div>
+          </div>
+          <div class="row no-gutter" [class.noprint]="!judgmentPayment">
+            <div class="col-sm-12">
+              <input type="checkbox" [(ngModel)]="judgmentPayment" class="noprint"/>&nbsp;
+              This judgement shall be paid <label class="hide-me">{{selectedTerm}}</label>
+              <p-selectButton class="noprint"[options]="paymentTerms" [(ngModel)]="selectedTerm"></p-selectButton>.
+              <label class="hide-me">{{selectedCondition}}</label>
+              <p-selectButton class="noprint"[options]="checkConditions" [(ngModel)]="selectedCondition"></p-selectButton>,
+              and upon request of the judgment creditor and payment of the appropriate fee, the court clerk will certify the judgment to the regular civil docket for enforcement by the creditor.
+            </div>
+          </div>
+        </div><!-->end of panel body<-->
+      </div><!-->end of panel<-->
     </div>
     <div class="col-sm-1"></div>
   </div>
-  <div class="row no-gutter">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-2">Principle: </div>
-    <div class="col-sm-4">
-      <input [(ngModel)]="principleAmt" OnlyNumber="true" class= "namebox noprint" style="width: 110px;"/>
-      <label class="hide-me">{{principleAmt}}</label>
-    </div>
-    <div class="col-sm-4"></div>
-  </div>
+  

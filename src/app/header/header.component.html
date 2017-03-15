@@ -106,8 +106,8 @@
   <div class="col-sm-10">
     <div class="panel panel-success">
       <div class="panel-body">
-      &nbsp;&nbsp;&nbsp;&nbsp;This matter came on for trial hearing in open court on <label class="hide-me">{{selectedDate | date: 'yyyy-MM-dd'}}</label>
-      <p-calendar class="noprint" [(ngModel)] = "selectedDate"></p-calendar>. Plaintiff has claimed damages of $
+      &nbsp;&nbsp;&nbsp;&nbsp;This matter came on for trial hearing in open court on <label class="hide-me">{{date | date: 'yyyy-MM-dd'}}</label>
+      <p-calendar class="noprint" [(ngModel)] = "date"></p-calendar>. Plaintiff has claimed damages of $
       <input [(ngModel)]="claimedDamage" OnlyNumber="true" class= "namebox noprint" style="width: 110px;"/>
       <label class="hide-me">{{claimedDamage}}</label> for&nbsp;
       <input [(ngModel)]="claimedDamageFor" class="namebox noprint" style="width: 180px;"/><label class="hide-me">{{claimedDamageFor}}</label>.
@@ -157,23 +157,41 @@
   <pa-dfta-ns *ngIf="isPlaintiffAppeared && !isDefendantAppeared && !isServed" (isDismissed)="onIsDismissed($event)"></pa-dfta-ns>
   <pa-dfta-svd *ngIf="isPlaintiffAppeared && !isDefendantAppeared && isServed"></pa-dfta-svd>
   <pa-da *ngIf="isPlaintiffAppeared && isDefendantAppeared"></pa-da>
-  <div class="row no-gutter">
+  <div class="row no-gutter noprint">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary noborder">
         <div class="panel-heading noprint">Narrative</div>
         <div class="panel-body">
-            <textarea rows="6" pInputTextarea autoResize="autoResize" [(ngModel)]="narrativeText" class="form-control noprint"
+            <textarea rows="6" pInputTextarea autoResize="autoResize" [(ngModel)]="narrativeText" class="form-control"
     placeholder="{here set forth in detail the court’s ruling and reasons therefore, including an accounting for any judgment(s) awarded and offset.}"></textarea>
-        <div class="hide-me">{{narrativeText}}</div>
         </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row no-gutter hide-me"[class.noprint]="!narrativeText">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="panel panel-success">
+      <div>{{narrativeText}}</div>
       </div>
     </div>
     <div class="col-sm-1"></div>
   </div>
   <judgement-denied *ngIf="ifDismissed()"></judgement-denied>
   <judgement-granted *ngIf="ifNotDismissed()"></judgement-granted>
+  <div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+   Dated this <input [ngModel]="date | date:'d'" type="text" style="width:25px" class="causebox noprint"/><label class="hide-me">{{date | date:'d'}}</label> day of 
+   <input [ngModel]="date | date:'MMMM'" type="text" style="width:85px" class="causebox noprint"/><label class="hide-me">{{date | date:'MMMM'}}</label>, 
+   <input [ngModel]="date | date:'y'" type="text" style="width:35px" class="causebox noprint"/><label class="hide-me">{{date | date:'y'}}</label>.
+  </div>
+  <div class="col-sm-1"></div>
 </div>
+</div>
+<BR>
 
 <BR>
 <div class="row text-center">

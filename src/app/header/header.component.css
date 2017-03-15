@@ -49,6 +49,10 @@ input.causebox {
     /*border-bottom: 2px;*/
     width: 150px;
 }
+.panel.noborder {
+    border: none;
+    box-shadow: none;
+}
 .ml-1 {
   margin-left: 15px !important;
 }

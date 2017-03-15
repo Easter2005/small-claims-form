@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   private isDefendantAppeared: boolean;
   private servedText: string;
   private isDismissed: boolean;
-
+  private date = new Date();
   constructor( private elementRef : ElementRef,
                private divisionService: DivisionService,
                private courtService: CourtService,
@@ -118,7 +118,7 @@ export class HeaderComponent implements OnInit {
     '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>'+
     '<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />'+
     '<style> .row.no-gutter {margin-left: 0;margin-right: 0;} .row.no-gutter [class*="col-"]:not(:first-child),.row.no-gutter [class*="col-"]:not(:last-child) {padding-right: 0;padding-left: 0;}'+
-    '.ml-1 { margin-left: 15px !important;}</style> '+
+    '.panel.noborder {border: none;box-shadow: none;}.ml-1 { margin-left: 15px !important;}</style> '+
     '</head><body onload="window.print()">' + innerContents + '</html>');
     popupWinindow.document.close();
   }

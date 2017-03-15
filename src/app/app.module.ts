@@ -9,7 +9,7 @@ import { ToggleButtonModule,
          InputTextModule,
          SelectButtonModule,
          MessagesModule,
-         GrowlModule } from 'primeng/primeng';
+         GrowlModule} from 'primeng/primeng';
 import { SHARED_PROVIDERS } from './shared/shared';
 
 import { AppComponent } from './app.component';

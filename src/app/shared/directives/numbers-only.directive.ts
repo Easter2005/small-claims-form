@@ -12,6 +12,7 @@ export class NumbersOnlyDirective {
   @HostListener('keydown', ['$event']) onKeyDown(event) {
     let e = <KeyboardEvent> event;
     if (this.OnlyNumber) {
+      //console.log(e.keyCode);
       if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
         // Allow: Ctrl+A
         (e.keyCode == 65 && e.ctrlKey === true) ||
@@ -31,7 +32,8 @@ export class NumbersOnlyDirective {
             }
             else return;
         }
-        if(e.keyCode>=47 && e.keyCode < 58){
+        if((e.keyCode > 47 && e.keyCode < 58) ||
+        (e.keyCode > 95 && e.keyCode < 106 )){
           var cursorPos = this.el.nativeElement.selectionStart;
           var decimalPos = this.el.nativeElement.value.indexOf('.');
           if (decimalPos > 0 && cursorPos > decimalPos+2){
