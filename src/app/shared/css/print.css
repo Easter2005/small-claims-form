@@ -55,12 +55,13 @@ input.causebox {
 .ml-1 {
   margin-left: 15px !important;
 }
-.hide-me{
+/*.hide-me{
   display: none;
 }
 .show-me{
   display: block;
 }
+*/
 .grayout {
     opacity: 0.2; /* Real browsers */
     filter: alpha(opacity = 20); /* MSIE */
