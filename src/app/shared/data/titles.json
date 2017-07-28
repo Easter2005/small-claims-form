@@ -1,12 +1,10 @@
 [{
-     "name":"Order of default"
- },{
-     "name":"Default judgment"
- },{
-     "name":"Order of dismissal"
- },{
-     "name":"Continuance"
- },{
      "name":"Judgment"
+ },{
+     "name":"Order of Continuance"
+ },{
+     "name":"Order of Default judgment"
+ },{
+     "name":"Order of Dismissal"
  }
  ]
