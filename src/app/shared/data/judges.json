@@ -1,8 +1,6 @@
 {
 	"data": [{
-		"name": "Judge Anne Harper"
-	}, {
-		"name": "Judge Arthur Chapman"
+		"name": "Judge Arthur Chapman" 
 	}, {
 		"name": "Judge Corinna Harn"
 	}, {
@@ -14,6 +12,8 @@
 	}, {
 		"name": "Judge Elizabeth Stephenson"
 	}, {
+		"name": "Judge Fa’amomoi Masaniai"
+	}, {
 		"name": "Judge Gregg Hirakawa"
 	}, {
 		"name": "Judge Jason Poydras"
@@ -23,6 +23,8 @@
 		"name": "Judge Joseph Campagna"
 	}, {
 		"name": "Judge Kevin Peck"
+	}, {
+		"name": "Judge Kristin Shotwell"
 	}, {
 		"name": "Judge Laurel Gibson"
 	}, {
